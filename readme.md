@@ -4,6 +4,12 @@
 npm install
 ```
 
+## Run the app
+
+```bash
+npm start
+```
+
 ## Dependencies used
 
 -   [Nodejs](https://nodejs.org/en/)
