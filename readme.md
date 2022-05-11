@@ -11,3 +11,5 @@ npm install
 -   [Postgres](https://www.postgresql.org/)
 -   [jwt](https://www.npmjs.com/package/jsonwebtoken)
 -   [multer](https://www.npmjs.com/package/multer)
+-   [bcrypt](https://www.npmjs.com/package/bcrypt)
+-   [pg-format](https://www.npmjs.com/package/pg-format)
