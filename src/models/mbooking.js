@@ -42,7 +42,7 @@ models.updateData = function({id_booking, movie, date, time, cinema, tickets, to
             resolve('Data has been updated')
         })
         .catch((err) => {
-            console.log(err);
+            console.log(err)
             reject(err)
         })
     })

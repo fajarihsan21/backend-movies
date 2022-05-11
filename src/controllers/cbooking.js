@@ -23,9 +23,10 @@ cbooking.Create = async (req, res) => {
 
 cbooking.Update = async (req, res) => {
     try {
+        const {id_booking} = req.params
         const {movie, date, time, cinema, tickets, total} = req.body
         const data = await models.updateData({
-            movie, date, time, cinema, tickets, total
+            id_booking, movie, date, time, cinema, tickets, total
         })
         return response(res, 200, data)
     } catch (error) {

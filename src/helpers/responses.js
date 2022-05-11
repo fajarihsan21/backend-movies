@@ -1,4 +1,4 @@
-function response(res, status, result = '') {
+function response(res, status, result = '', meta = '') {
     let desc = ''
 
     switch (status) {
@@ -8,23 +8,33 @@ function response(res, status, result = '') {
         case 201:
             desc = 'Created'
             break
+        case 202:
+            desc = 'Accepted'
+            break
         case 400:
             desc = 'Bad Request'
             break
         case 401:
             desc = 'Unauthorized'
             break
+        case 403:
+            desc = 'Forbidden'
+            break
+        case 404:
+            desc = 'Not Found'
+            break
         case 500:
             desc = 'Internal Server Error'
             break
-        case 501:
+        case 502:
             desc = 'Bad Gateway'
             break
-        case 304:
-            desc = 'Not Modified'
+        case 503:
+            desc = 'Service Unavailable'
             break
-        default:
-            desc = ''
+        case 504:
+            desc = 'Gateway Timeout'
+            break
     }
 
     const isObject = (data) => {
@@ -35,6 +45,10 @@ function response(res, status, result = '') {
         status: status,
         description: desc,
         result: isObject(result) ? [result] : result
+    }
+
+    if (meta) {
+        result.meta = meta
     }
 
     res.status(status).json(results)
